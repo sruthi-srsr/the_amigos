@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<style>
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #218838;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+<h2>Welcome {{user.name}}</h2>
+<p><strong>Balance:</strong> ₹{{user.balance}}</p>
+</div>
+
+<div class="card">
+<h3>Deposit</h3>
+<form action="/deposit/{{acc_no}}" method="post">
+  <input name="amount" placeholder="Enter amount" required>
+  <button>Deposit</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Withdraw</h3>
+<form action="/withdraw/{{acc_no}}" method="post">
+  <input name="amount" placeholder="Enter amount" required>
+  <button>Withdraw</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Transactions</h3>
+<ul>
+  {% for t in user.transactions %}
+    <li>{{t.type}} - ₹{{t.amount}}</li>
+  {% endfor %}
+</ul>
+</div>
+
+</body>
+</html>

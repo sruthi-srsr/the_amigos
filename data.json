@@ -1,0 +1,39 @@
+{
+    "1001": {
+        "name": "",
+        "pin": "",
+        "balance": 0,
+        "transactions": []
+    },
+    "1021": {
+        "name": "Suriya",
+        "pin": "1234",
+        "balance": 1000.0,
+        "transactions": [
+            {
+                "type": "Credit",
+                "amount": 1500.0
+            },
+            {
+                "type": "Debit",
+                "amount": 500.0
+            },
+            {
+                "type": "Credit",
+                "amount": 200.0
+            },
+            {
+                "type": "Credit",
+                "amount": 500.0
+            },
+            {
+                "type": "Debit",
+                "amount": 100.0
+            },
+            {
+                "type": "Debit",
+                "amount": 600.0
+            }
+        ]
+    }
+}
